@@ -49,17 +49,19 @@ This project trains and evaluates six different classification models on the bre
 ```
 ModelClassification/
 ├── app.py                    # Streamlit web application for model evaluation
-├── train_models.py          # Script to train and save all models
-├── requirements.txt         # Python dependencies
-├── saved_models/            # Directory containing trained model files
-│   ├── logistic_regression.pkl
-│   ├── decision_tree.pkl
-│   ├── knn.pkl
-│   ├── naive_bayes.pkl
-│   ├── random_forest.pkl
-│   ├── xgboost.pkl
-│   └── test_samples.csv     # Sample test data
-└── README.md               # This file
+├── model/
+│   ├── train_models.py       # Script to train and save all models
+│   └── saved_models/         # Directory containing trained model files
+│       ├── logistic_regression.pkl
+│       ├── decision_tree.pkl
+│       ├── knn.pkl
+│       ├── naive_bayes.pkl
+│       ├── random_forest.pkl
+│       ├── xgboost.pkl
+│       └── test_samples.csv  # Sample test data
+├── requirements.txt          # Python dependencies
+├── venv/                     # Optional virtual environment
+└── README.md                 # This file
 ```
 
 ## Installation
@@ -93,10 +95,10 @@ ModelClassification/
 
 ### Training Models
 
-To train all models and save them to the `saved_models/` directory:
+To train all models and save them to the `model/saved_models/` directory (run from project root):
 
 ```bash
-python train_models.py
+python model/train_models.py
 ```
 
 This script will:
