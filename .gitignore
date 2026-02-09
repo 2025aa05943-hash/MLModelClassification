@@ -1,0 +1,19 @@
+# virtual environment
+venv/
+.env/
+
+# python cache
+.mypycache__/
+*.pyc
+
+# streamlit
+.streamlit/
+
+# OS files
+.DS_Store
+
+# notebooks
+*.ipynb_checkpoints
+
+# data files (test uploads)
+*.csv
