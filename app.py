@@ -23,7 +23,7 @@ def load_models():
         "KNN": joblib.load("model/saved_models/knn.pkl"),
         "Naive Bayes": joblib.load("model/saved_models/naive_bayes.pkl"),
         "Random Forest": joblib.load("model/saved_models/random_forest.pkl"),
-        "XGBoost": joblib.load("saved_models/xgboost.pkl"),
+        "XGBoost": joblib.load("model/saved_models/xgboost.pkl"),
     }
 
 models = load_models()
