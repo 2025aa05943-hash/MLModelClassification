@@ -100,16 +100,16 @@ print(results_df)
 
 #Save Each Trained Model to Pickle
 # directory to save models
-os.makedirs("saved_models", exist_ok=True)
+os.makedirs("model/saved_models", exist_ok=True)
 
 for name, model in models.items():
-    filename = f"saved_models/{name.replace(' ', '_').lower()}.pkl"
+    filename = f"model/saved_models/{name.replace(' ', '_').lower()}.pkl"
     joblib.dump(model, filename)
     print(f"{name} saved to {filename}")
 
 # Save test samples for app testing
 test_samples = X_test.copy()
 test_samples["target"] = y_test
-test_samples.to_csv("saved_models/test_samples.csv", index=False)
-print("Test samples saved to saved_models/test_samples.csv")
+test_samples.to_csv("model/saved_models/test_samples.csv", index=False)
+print("Test samples saved to model/saved_models/test_samples.csv")
 
