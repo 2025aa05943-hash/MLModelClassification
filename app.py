@@ -39,7 +39,14 @@ uploaded_file = st.file_uploader(
     "Upload test dataset (features + target column)",
     type=["csv"]
 )
-
+# Download sample test data
+with open("model/saved_models/test_samples.csv", "rb") as f:
+    st.download_button(
+        label="Download Sample Test Data",
+        data=f,
+        file_name="test_samples.csv",
+        mime="text/csv"
+    )
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     st.write("Preview of uploaded data:")
@@ -48,7 +55,7 @@ if uploaded_file is not None:
     # --------------------------------------------------
     # Target column selection
     # --------------------------------------------------
-    target_col = st.selectbox("Select target column", df.columns)
+    target_col = st.selectbox("Select target column [for the example csv shared, select 'target']", df.columns)
 
     X_test = df.drop(columns=[target_col])
     y_test = df[target_col]
